@@ -32,8 +32,6 @@ RUN wget ${REDIS_BASE_URL}/${REDIS_VERSION}/redis.conf \
     echo '# ASCII art logo in startup logs by setting the following option to yes.'; \
     echo 'always-show-logo yes'; \
     } >> sentinel.conf \
- && mv -f sentinel.conf /usr/local/bin/; \
- \
-    rm -f /usr/local/bin/docker-entrypoint.sh
+ && mv -f sentinel.conf /usr/local/bin/
 
 COPY docker-entrypoint.sh /usr/local/bin/

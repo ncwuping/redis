@@ -35,3 +35,5 @@ RUN wget ${REDIS_BASE_URL}/${REDIS_VERSION}/redis.conf \
  && mv -f sentinel.conf /usr/local/bin/
 
 COPY docker-entrypoint.sh /usr/local/bin/
+
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh

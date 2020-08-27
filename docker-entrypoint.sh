@@ -19,8 +19,8 @@ if [ "$1" = 'redis-server' -a "$(id -u)" = '0' ]; then
         sed -E 's!^\s*#*\s*(cluster-announce-port ).*!\1'${CLUSTER_ADVERTISE_PORT:-6379}'!' -i /data/redis.conf
         sed -E 's!^\s*#*\s*(cluster-announce-bus-port ).*!\1'${CLUSTER_ADVERTISE_BUS_PORT:-6380}'!' -i /data/redis.conf
         if [ ! ${REQUIREPASS} = "" ]; then
-          sed -E 's!^\s*#*\s*(masterauth ).*!\1'${MASTERAUTH}'!' -i /data/redis.conf
-          sed -E 's!^\s*#*\s*(requirepass ).*!\1'${REQUIREPASS}'!' -i /data/redis.conf
+          sed -E 's!^\s*#*\s*(masterauth ).*!\1"'${REQUIREPASS}'"!' -i /data/redis.conf
+          sed -E 's!^\s*#*\s*(requirepass ).*!\1"'${REQUIREPASS}'"!' -i /data/redis.conf
         fi
 
         mv -f /usr/local/bin/sentinel.conf /data/

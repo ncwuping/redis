@@ -1,6 +1,5 @@
 FROM redis:4.0.14-alpine
 
-ENV REDIS_VERSION 4.0.14
 ENV REDIS_BASE_URL https://github.com/antirez/redis/raw
 
 RUN wget ${REDIS_BASE_URL}/${REDIS_VERSION}/redis.conf \

@@ -1,6 +1,6 @@
-FROM redis:4.0.14-alpine
+FROM redis:6.0.15-alpine3.14
 
-ENV REDIS_BASE_URL https://github.com/antirez/redis/raw
+ENV REDIS_BASE_URL https://github.com/redis/redis/raw
 
 RUN wget ${REDIS_BASE_URL}/${REDIS_VERSION}/redis.conf \
  && sed -E 's!^\s*(bind 127\.0\.0\.1)!#\1!' -i redis.conf \

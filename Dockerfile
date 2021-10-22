@@ -1,4 +1,4 @@
-FROM redis:6.0.15-alpine3.14
+FROM redis:6.0.16-alpine3.14
 
 ENV REDIS_BASE_URL https://github.com/redis/redis/raw
 
